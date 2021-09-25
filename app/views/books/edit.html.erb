@@ -1,6 +1,15 @@
 <main>
   <p id="notice"></p>
   <div class="container">
+     <div id="error_explanation">
+    <% if @book.errors.any? %>
+        <%= @book.errors.count %>errors<br>
+          <ul><% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+      <% end %>
+  </div>
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
         <h1>Editing Book</h1>
