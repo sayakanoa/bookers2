@@ -62,6 +62,18 @@
       <table>
         <tbody>
 
+          <% if @comment.errors.any? %>
+          <div id="error_explanation">
+
+          <%=  @comment.errors.count %>errors<br>
+            <ul><%  @comment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+            </ul>
+          <% end %>
+          </div>
+
+
             <% @book.book_comments.each do |book_comment| %>
             <% user = User.find(book_comment.user_id) %>
             <tr>
@@ -84,7 +96,7 @@
 
 
       <div>
-      <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
+      <%= form_with(model:[@book, @comment], local: true) do |f| %>
       <%= f.text_area :comment, rows:'5',placeholder: "" %><br>
       <%= f.submit "送信" %>
       <% end %>

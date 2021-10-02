@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 
   before_action :correct_user, only: [:edit, :update, :destroy]
   def index
-    @new = Book.new
+    #@new = Book.new
     @user = current_user
     @books = Book.all
     @book = Book.new
@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to book_path(@book.id), notice: "successfully"
     else
-      @new = Book.new
+     #@new = Book.new
       @books = Book.all
       @user = current_user
       render :index
@@ -26,7 +26,8 @@ class BooksController < ApplicationController
     @new = Book.new
     @book = Book.find(params[:id])
     @user = User.find(@book.user_id)
-    @book_comment = BookComment.new
+    @comment = BookComment.new
+
   end
 
   def edit
