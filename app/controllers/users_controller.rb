@@ -25,6 +25,18 @@ before_action :correct_user, only: [:edit, :update, :destroy]
     @books = @user.books
   end
 
+  def following
+    @user = User.find(params[:id])
+    @users = @user.following_user
+    render 'show_following'
+  end
+
+  def follower
+    @user = User.find(params[:id])
+    @users = @user.follower_user
+    render 'show_follower'
+  end
+
   def edit
     @user = User.find(params[:id])
     #if @user == current_user

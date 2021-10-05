@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
 # ユーザーをフォローする
   def follow(user_id)
-    follower.create(followed_id: user_id)
+    self.follower.create(followed_id: user_id)
   end
   # ユーザーのフォローを外す
   def unfollow(user_id)
