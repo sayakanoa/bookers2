@@ -12,21 +12,33 @@ class User < ApplicationRecord
   has_many :following_user, through: :follower, source: :followed
   has_many :follower_user, through: :followed, source: :follower
 
-# ユーザーをフォローする
   def follow(user_id)
-    self.follower.create(followed_id: user_id)
+    follower.create(followed_id: user_id)
   end
-  # ユーザーのフォローを外す
+
   def unfollow(user_id)
     follower.find_by(followed_id: user_id).destroy
   end
-  # フォロー確認をおこなう
+
   def following?(user)
     following_user.include?(user)
+  end
+
+  def self.search(search,word)
+    if search == "forward_match"
+                    @user = User.where("name LIKE?","#{word}%")
+    elsif search == "backword_match"
+                    @user = User.where("name LIKE?","%#{word}")
+    elsif search == "perfect_match"
+                    @user = User.where(name: "#{word}")
+    else
+                    @user = User.where("name LIKE?","%#{word}%")
+    end
   end
 
   attachment :profile_image
   validates :name, uniqueness: true, presence: true,
                    length: { minimum: 2, maximum: 20 }
   validates :introduction, length: { maximum: 50 }
+
 end

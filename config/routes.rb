@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  get 'search' => 'searches#search'
 
     #resources :relationships, only: [:create, :destroy]
   post 'follow/:id' => 'relationships#follow', as: 'follow'
