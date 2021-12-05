@@ -2,9 +2,7 @@ class BooksController < ApplicationController
 
   before_action :correct_user, only: [:edit, :update, :destroy]
   def index
-    #@new = Book.new
     @user = current_user
-    #@books = Book.all
     @books = Book.left_joins(:week_favorites).group(:id).order(Arel.sql('count(book_id) desc'))
     @book = Book.new
   end
