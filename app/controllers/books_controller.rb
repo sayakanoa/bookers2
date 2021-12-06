@@ -3,6 +3,8 @@ class BooksController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   def index
     @user = current_user
+    
+    #過去１週間のいいねの数が多い順に本の投稿を表示させる
     @books = Book.left_joins(:week_favorites).group(:id).order(Arel.sql('count(book_id) desc'))
     @book = Book.new
   end
