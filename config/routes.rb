@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       get :following, :follower
     end
   end
-
+  
+  resources :groups
   get 'search' => 'searches#search'
 
     #resources :relationships, only: [:create, :destroy]
