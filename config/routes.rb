@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   
   resources :groups
+  
   get 'search' => 'searches#search'
 
     #resources :relationships, only: [:create, :destroy]
