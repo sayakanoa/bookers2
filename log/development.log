@@ -1816,3 +1816,341 @@ Processing by GroupsController#index as HTML
 Completed 200 OK in 96ms (Views: 92.0ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/" for 106.72.203.2 at 2021-12-12 12:59:42 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 695ms (Views: 684.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 106.72.203.2 at 2021-12-12 12:59:46 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "relationships" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/books/_info.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "relationships" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/books/_info.html.erb:19
+  Rendered books/_info.html.erb (24.4ms)
+  Rendered books/_under.html.erb (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "relationships" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/index.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "relationships" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/index.html.erb:33
+  Rendered users/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 144ms (Views: 125.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 12:59:48 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+...e; form_with model:@group local:true do |f| 
+...                          ^~~~~
+/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 12:59:59 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+...=  form_with model:@group local:true do |f| @output_buffer.s...
+...                          ^~~~~
+/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:00:17 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+...=  form_with model:@group local:true do |f| @output_buffer.s...
+...                          ^~~~~
+/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:00:33 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+...=  form_with model:@group local:true do |f| @output_buffer.s...
+...                          ^~~~~
+/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:00:34 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+...=  form_with model:@group local:true do |f| @output_buffer.s...
+...                          ^~~~~
+/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/groups/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/groups/new.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:01:44 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 148ms (Views: 139.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:02:16 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (188.0ms)
+Completed 200 OK in 315ms (Views: 294.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:02:26 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 93ms (Views: 89.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:03:19 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 98ms (Views: 93.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:03:28 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 86ms (Views: 81.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:05:44 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 93ms (Views: 88.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:09:52 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:7: syntax error, unexpected '='
+...f.submit 'create group', class="btn btn-success" );@output_b...
+...                              ^):
+  
+app/views/groups/new.html.erb:7: syntax error, unexpected '='
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:10:07 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/bookers2/app/views/groups/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+...submit 'create group', :class="btn btn-success" );@output_bu...
+...                              ^):
+  
+app/views/groups/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:10:15 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 82ms (Views: 78.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:10:24 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 96ms (Views: 92.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:13:44 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_attachment_definition' for #<Group:0x00007f1555301850>):
+    4:     <%= f.text_field :name %></br>
+    5:     <%= f.label :紹介文 %>
+    6:     <%= f.text_area :introduction%></br>
+    7:     <%= f.attachment_field :image %>
+    8:     <%= f.submit 'create group', :class=>"btn btn-primary" %>
+    9: 
+   10: <% end %>
+  
+app/views/groups/new.html.erb:7:in `block in _app_views_groups_new_html_erb___2680963029545040786_69864800146500'
+app/views/groups/new.html.erb:2:in `_app_views_groups_new_html_erb___2680963029545040786_69864800146500'
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:14:14 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Group:0x00007f1555144c38>
+Did you mean?  image_id_in_database):
+    4:     <%= f.text_field :name %></br>
+    5:     <%= f.label :紹介文 %>
+    6:     <%= f.text_area :introduction%></br>
+    7:     <%= f.attachment_field :image_id %>
+    8:     <%= f.submit 'create group', :class=>"btn btn-primary" %>
+    9: 
+   10: <% end %>
+  
+app/views/groups/new.html.erb:7:in `block in _app_views_groups_new_html_erb___2680963029545040786_69864799234400'
+app/views/groups/new.html.erb:2:in `_app_views_groups_new_html_erb___2680963029545040786_69864799234400'
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:17:17 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (25.0ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_attachment_definition' for #<Group:0x00007fded456b750>):
+    4:     <%= f.text_field :name %></br>
+    5:     <%= f.label :紹介文 %>
+    6:     <%= f.text_area :introduction%></br>
+    7:     <%= f.attachment_field :image %>
+    8:     <%= f.submit 'create group', :class=>"btn btn-primary" %>
+    9: 
+   10: <% end %>
+  
+app/views/groups/new.html.erb:7:in `block in _app_views_groups_new_html_erb___1146073325856360449_70297511203300'
+app/views/groups/new.html.erb:2:in `_app_views_groups_new_html_erb___1146073325856360449_70297511203300'
+Started GET "/groups/new" for 106.72.203.2 at 2021-12-12 13:20:17 +0000
+Cannot render console from 106.72.203.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (18.5ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Group:0x00007fded43fb488>
+Did you mean?  image_id_in_database):
+    4:     <%= f.text_field :name %></br>
+    5:     <%= f.label :紹介文 %>
+    6:     <%= f.text_area :introduction%></br>
+    7:     <%= f.attachment_field :image_id %>
+    8:     <%= f.submit 'create group', :class=>"btn btn-primary" %>
+    9: 
+   10: <% end %>
+  
+app/views/groups/new.html.erb:7:in `block in _app_views_groups_new_html_erb___1146073325856360449_70297510203540'
+app/views/groups/new.html.erb:2:in `_app_views_groups_new_html_erb___1146073325856360449_70297510203540'
