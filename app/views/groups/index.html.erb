@@ -14,7 +14,9 @@
         </td>
         
         <td>
+            <%= link_to group_path(group.id) do %>
             <%= group.name %>
+            <% end %>
         </td>
         <td>
             <%= group.introduction %>
