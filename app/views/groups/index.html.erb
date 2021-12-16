@@ -1,0 +1,27 @@
+<h1>Groups</h1>
+<table>
+<tr>
+    <th></th>
+    <th>グループ名</th>
+    <th>紹介文</th>
+    <th></th>
+</tr>
+<% @groups.each do |group| %>
+    <tr>
+        
+        <td>
+            <%= attachment_image_tag group, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+        </td>
+        
+        <td>
+            <%= group.name %>
+        </td>
+        <td>
+            <%= group.introduction %>
+        </td>
+        <td>
+            <%= link_to '編集', edit_group_path(group.id) %>
+        </td>    
+    </tr>    
+<% end %>
+</table>
