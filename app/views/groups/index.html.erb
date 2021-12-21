@@ -22,7 +22,9 @@
             <%= group.introduction %>
         </td>
         <td>
-            <%= link_to '編集', edit_group_path(group.id) %>
+            <% if current_user.id == group.owner_id %>
+                <%= link_to '編集', edit_group_path(group.id) %>
+            <% end %>
         </td>    
     </tr>    
 <% end %>

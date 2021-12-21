@@ -3,4 +3,5 @@
 <%= attachment_image_tag @group, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
 <%= @group.name %>
 <%= @group.introduction %>
+
 <%= link_to "edit", edit_group_path(@group.id) %>
