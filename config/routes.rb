@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :groups
+  resources :groups do
+    member do
+      get :join
+    end
+  end
   
   get 'search' => 'searches#search'
 
