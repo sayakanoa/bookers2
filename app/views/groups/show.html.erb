@@ -4,8 +4,8 @@
 <%= @group.name %>
 <%= @group.introduction %>
 
-<% if current_user.id == group.owner_id %>
-    <%= link_to "edit", edit_group_path(@group.id) %>
+<% if current_user.id == @group.owner_id %>
+    <%= link_to "edit", edit_group_path(@group.id), class: "btn btn-success"%>
 <% else %>
-    <%#= link_to "Join this group",%>
+    <%= link_to "Join this group", group_group_users_path(@group.id), method: :post, class: "btn btn-primary"%>
 <% end %>
