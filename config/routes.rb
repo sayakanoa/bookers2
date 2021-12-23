@@ -9,14 +9,11 @@ Rails.application.routes.draw do
   end
   
   resources :groups do
-    member do
-      get :join
-    end
+    resource :group_users, only: [:create, :destroy]
   end
   
   get 'search' => 'searches#search'
 
-    #resources :relationships, only: [:create, :destroy]
   post 'follow/:id' => 'relationships#follow', as: 'follow'
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
 
