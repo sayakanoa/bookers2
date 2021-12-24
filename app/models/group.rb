@@ -3,6 +3,6 @@ class Group < ApplicationRecord
     attachment :image
     
     def group_me?(user)
-      group_users.includes(user_id: user.id)
+      group_users.exists?(user_id: user.id)
     end
 end
