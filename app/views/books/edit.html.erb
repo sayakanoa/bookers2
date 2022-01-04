@@ -14,6 +14,7 @@
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
         <h1>Editing Book</h1>
         <%= form_with model:@book, local: true do |f| %>
+        
           <div class="form-group">
             <label for="book_title">Title</label><br>
             <%= f.text_field :title %>
@@ -22,6 +23,20 @@
             <label for="book_opinion">Opinion</label><br>
             <%= f.text_area :body %>
           </div>
+          
+          <div id="star-rate-<%= @book.id %>"></div>
+          <script>
+          $('#star-rate-<%= @book.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= @book.rate %>,
+          });
+          </script>  
+          
           <div class="form-group">
             <%= f.submit 'Update Book', :class=>"btn btn-success" %>
           </div>
@@ -32,4 +47,16 @@
       </div>
     </div>
   </div>
-</main
+</main>
+
+
+        <script>
+          $('#star').raty({
+            size     : 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            scoreName: 'book[rate]',
+            half: true,
+          });
+          </script>  
